@@ -17,5 +17,5 @@ n = pd.DataFrame(novo,columns=['Nome'])
 pd.concat([dataset,n])
 if st.button('Salvar'):
     dataset.to_excel('./nomes.xlsx',index=False)
-    st.text('Inserindo os dados. Dataset size:',len(dataset))
+    st.text('Inserindo os dados. Dataset size:'+str(len(dataset)))
 
