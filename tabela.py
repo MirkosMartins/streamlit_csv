@@ -14,7 +14,7 @@ st.table(dataset)
 st.text_input("Digite um novo nome para inserir:",key="novoNome")
 novo = pd.Series([str(st.session_state.novoNome)])
 n = pd.DataFrame(novo,columns=['Nome'])
-pd.append(dataset,n)
+pd.concat(dataset,n)
 if st.button('Salvar'):
     dataset.to_csv('./nomes.csv',sep=';',index=False)
 
