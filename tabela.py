@@ -12,7 +12,9 @@ dataset = pd.read_csv('./nomes.csv',sep=';',header=0)
 st.write('Teste do uso de csv como armazenamento online.')
 st.table(dataset)
 st.text_input("Digite um novo nome para inserir:",key="novoNome")
-pd.concat(dataset,[str(st.session_state.novoNome)])
+novo = pd.Series([str(st.session_state.novoNome)])
+n = pd.DataFrame(novo,columns=['Nome'])
+pd.append(dataset,n)
 if st.button('Salvar'):
     dataset.to_csv('./nomes.csv',sep=';',index=False)
 
