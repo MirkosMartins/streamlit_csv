@@ -15,6 +15,7 @@ st.text_input("Digite um novo nome para inserir:",key="novoNome")
 st.text('Nome digitado: '+st.session_state.novoNome)
 novo = pd.Series([str(st.session_state.novoNome)])
 n = pd.DataFrame(novo,columns=['Nome'])
+st.text(n)
 pd.concat([dataset,n])
 if st.button('Salvar'):
     dataset.to_excel('./nomes.xlsx',index=False)
