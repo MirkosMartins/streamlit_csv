@@ -16,5 +16,6 @@ novo = pd.Series([str(st.session_state.novoNome)])
 n = pd.DataFrame(novo,columns=['Nome'])
 pd.concat([dataset,n])
 if st.button('Salvar'):
-    dataset.to_csv('./nomes.csv',sep=';',index=False)
+    dataset.to_csv('./nomes.csv',index=False)
+    st.text('Salvou nome no csv')
 
